@@ -1,0 +1,254 @@
+/*******************************************************************************
+TYPOGRAPHY
+*******************************************************************************/
+
+
+////////////////////////////////////////////////////////////////////////////////
+// "Root EM" (REM) Sizing
+// http://snook.ca/archives/html_and_css/font-size-with-rem
+//
+// html { font-size: 62.5%; }
+// body { font-size: 14px; font-size: 1.4rem; } // =14px
+// h1   { font-size: 24px; font-size: 2.4rem; } // =24px
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Mixins
+////////////////////////////////////////////////////////////////////////////////
+
+.font-size(@pxSize) {
+    font-size: @pxSize * 1px; // e.g. @pxSize== 14 then font-size: 14px;
+    font-size: (@pxSize/10) * 1rem; // e.g. @pxSize== 14 then font-size: 1.4rem;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Base
+////////////////////////////////////////////////////////////////////////////////
+
+html {
+    font-family: @font-family-stack;
+    font-weight: @font-weight;
+    font-size: 62.5%;
+}
+
+body {
+    .font-size(@font-size-base); // = 14px / 1.4rem
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Headings
+////////////////////////////////////////////////////////////////////////////////
+
+h1,
+h2,
+h3,
+h4 {
+    margin-right: 0;
+    margin-left: 0;
+    font-weight: @font-weight-heading;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.h1,
+.h2,
+.h3 {
+    font-weight: @font-weight-heading;
+}
+
+h1,
+.h1 {
+    .font-size(@font-size-base * 1.42); // = 20px / 2rem
+}
+
+h2,
+.h2 {
+    .font-size(@font-size-base * 1.14); // = 16px / 1.6rem
+}
+
+h3,
+.h3 {
+    .font-size(@font-size-base); // = 14px / 1.4rem
+}
+
+b {
+    font-weight: @font-weight;
+
+    h1 &,
+    h2 &,
+    h3 & {
+        font-weight: inherit;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Misc
+////////////////////////////////////////////////////////////////////////////////
+
+a {
+    &[ng-click],
+    &[data-ng-click] {
+        cursor: pointer;
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Sizes
+////////////////////////////////////////////////////////////////////////////////
+
+.t-xxlarge {
+    .font-size(@font-size-base * 2.14); // = 30px / 3rem
+}
+
+.t-xlarge {
+    .font-size(@font-size-base * 1.71); // = 24px / 2.4rem
+}
+
+.t-large {
+    .font-size(@font-size-base * 1.42); // = 20px / 2rem
+}
+
+.t-base {
+    .font-size(@font-size-base); // = 14px / 1.4rem
+}
+
+.t-small {
+    .font-size(@font-size-base * 0.71); // = 10px / 1rem
+}
+
+.t-xsmall {
+    .font-size(@font-size-base * 0.57); // = 8px / .8rem
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Formatting
+////////////////////////////////////////////////////////////////////////////////
+
+.t-strong {
+    font-weight: bold;
+}
+
+.t-underline {
+    text-decoration: underline;
+
+    /*&--firstLetter {
+        display: block;
+
+        &::first-letter {
+            //border-bottom: 1px solid @brand-secondary; // Works
+            //color: red; // Works
+            text-decoration: underline; // doesn't work
+        }
+    }*/
+}
+
+.t-normal {
+    font-weight: @font-weight-heading;
+}
+
+.t-italic {
+    font-style: italic;
+}
+
+.t-code {
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Alignment
+////////////////////////////////////////////////////////////////////////////////
+
+.t-start {
+    text-align: left;
+    text-align: start;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-end {
+    text-align: right;
+    text-align: end;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Casing
+////////////////////////////////////////////////////////////////////////////////
+
+.t-upper {
+    text-transform: uppercase;
+}
+
+.t-lower {
+    text-transform: lowercase;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Overflow
+////////////////////////////////////////////////////////////////////////////////
+
+.t-ellipsis {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+.t-single {
+    white-space: nowrap;
+}
+
+.t-break {
+    word-break: break-all;
+}
+
+.t-linebreaks {
+    white-space: pre-wrap;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Colors
+////////////////////////////////////////////////////////////////////////////////
+
+.t-info {
+    color: @brand-info;
+}
+
+.t-warning {
+    color: @brand-warning;
+}
+
+.t-caution {
+    color: @brand-caution;
+}
+
+.t-success {
+    color: @brand-success;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  Cursors
+////////////////////////////////////////////////////////////////////////////////
+
+.cursor-help {
+    cursor: help;
+}

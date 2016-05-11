@@ -1,0 +1,215 @@
+/*******************************************************************************
+UTILITIES
+*******************************************************************************/
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: PADDING
+////////////////////////////////////////////////////////////////////////////////
+
+.padding-helper(@spacing) {
+    padding: @spacing;
+
+    &--x {
+        padding-right: @spacing;
+        padding-left: @spacing;
+    }
+
+    &--right {
+        padding-right: @spacing;
+    }
+
+    &--left {
+        padding-left: @spacing;
+    }
+
+    &--y {
+        padding-top: @spacing;
+        padding-bottom: @spacing;
+    }
+
+    &--top {
+        padding-top: @spacing;
+    }
+
+    &--bottom {
+        padding-bottom: @spacing;
+    }
+}
+
+.u-padding-s {
+    .padding-helper(@spacing-small);
+}
+
+.u-padding-m {
+    .padding-helper(@spacing-medium);
+}
+
+.u-padding-l {
+    .padding-helper(@spacing-large);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: MARGIN
+////////////////////////////////////////////////////////////////////////////////
+
+.margin-helper(@spacing) {
+    margin: @spacing !important;
+
+    &--x {
+        margin-right: @spacing !important;
+        margin-left: @spacing !important;
+    }
+
+    &--right {
+        margin-right: @spacing !important;
+    }
+
+    &--left {
+        margin-left: @spacing !important;
+    }
+
+    &--y {
+        margin-top: @spacing !important;
+        margin-bottom: @spacing !important;
+    }
+
+    &--top {
+        margin-top: @spacing !important;
+    }
+
+    &--bottom {
+        margin-bottom: @spacing !important;
+    }
+}
+
+.u-margin-0 {
+    .margin-helper(0);
+}
+
+.u-margin-s {
+    .margin-helper(@spacing-small);
+}
+
+.u-margin-m {
+    .margin-helper(@spacing-medium);
+}
+
+.u-margin-l {
+    .margin-helper(@spacing-large);
+}
+
+.u-shrink {
+    margin: 0;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Gutters
+////////////////////////////////////////////////////////////////////////////////
+
+.u-gutters {
+
+    &--edge {
+        padding: @spacing-medium;
+    }
+
+    &--between {
+        & > * {
+            margin-top: @spacing-medium;
+            margin-bottom: @spacing-medium;
+        } 
+
+        & > :first-child {
+            margin-top: 0;
+        }
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Rounded corners
+////////////////////////////////////////////////////////////////////////////////
+
+.u-rounded {
+    border-radius: @border-radius;
+
+    &--top {
+        border-top-left-radius: @border-radius;
+        border-top-right-radius: @border-radius;
+    }
+
+    &--bottom {
+        border-bottom-left-radius: @border-radius;
+        border-bottom-right-radius: @border-radius;
+    }
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Block
+////////////////////////////////////////////////////////////////////////////////
+
+.u-block {
+    width: 100%;
+    display: block;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Hide
+////////////////////////////////////////////////////////////////////////////////
+
+.u-hidden {
+    display: none;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Visual aid utilities
+////////////////////////////////////////////////////////////////////////////////
+
+.u-more:after {
+    content: "...";
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Border removal
+////////////////////////////////////////////////////////////////////////////////
+
+.u-borderless {
+    border: none !important;
+
+    &--top {
+        border-top: none !important;
+    }
+
+    &--end {
+        border-right: none !important;
+    }
+
+    &--bottom {
+        border-bottom: none !important;
+    }
+
+    &--start {
+        border-left: none !important;
+    }
+
+    &--x {
+        border-right: none !important;
+        border-left: none !important;
+    }
+
+    &--y {
+        border-top: none !important;
+        border-bottom: none !important;
+    }
+}

@@ -1,0 +1,157 @@
+/*******************************************************************************
+WHITE LABEL BASE
+
+This file contains all variables used for the theme of the
+application and thus also serves as the interpolation base
+for white label clients (WLCs).
+*******************************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////
+//: Fonts
+////////////////////////////////////////////////////////////////////////////////
+
+@font-family-stack: "HelveticaNeue-Light",
+                    "Helvetica Neue Light",
+                    "Helvetica Neue",
+                    Helvetica,
+                    Arial,
+                    "Lucida Grande",
+                    sans-serif;
+@font-weight: 300;
+@font-weight-heading: normal;
+@font-size-base: 14; //px
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Gutters
+////////////////////////////////////////////////////////////////////////////////
+
+@gutter-size: 6px;
+@spacing-small: @gutter-size/2;
+@spacing-medium: @gutter-size*1.15;
+@spacing-large: @spacing-medium * 2;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Colors
+////////////////////////////////////////////////////////////////////////////////
+
+
+@main-bg: #26343f;
+@overlay-bg: rgba(0, 0, 0, .50);
+@brand-text-color: white;
+@brand-primary: #37658F;
+@brand-secondary: white;
+@brand-info: #47a7ff;
+@brand-warning: #FFC906;
+@brand-caution: #d94d4d;
+@brand-success: #8ee66c;
+@brand-focus-color: lighten(@brand-primary, 10%);
+@brand-field-bg: white;
+
+@border-radius: 3px;
+@border-thick: 3px;
+@border-color: #e0e0e0;
+
+@shortcuts-bg-color: #f0f0f0;
+
+@footer-bg-color: #1B252D;
+@footer-text-color: contrast(@footer-bg-color);
+
+@sidebar-bg-color: #26343f;
+@sidebar-text-color: contrast(@sidebar-bg-color);
+@sidebar-border-style: 1px solid darken(@sidebar-bg-color, 3%);
+
+@notifier-bg: #eee999;
+@notifier-border-color: mix(@notifier-bg, #a44, 70%);
+
+@report-success: #387C44;
+@report-warning: #FFF380;
+@report-caution: #C11B17;
+@report-info: #AFC368;
+
+@graph-total: #4C697F;
+@graph-backup: #99CCFF;
+@graph-archive: #FF9999;
+
+@progress-bg: #efefef;
+@progress-bar: @brand-info;
+@progress-bar--utilization: #94c780;
+@progress-bar--utilization-warning: #ffea9f;
+@progress-bar--utilization-caution: @report-caution;
+
+@modal-bg-color: white;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Buttons
+////////////////////////////////////////////////////////////////////////////////
+
+@btn-default-bg: @brand-secondary;
+@btn-default-color: black;
+@btn-default-border: @border-color;
+
+@btn-primary-bg: @brand-primary;
+@btn-primary-color: white;
+
+@btn-caution-bg: @brand-caution;
+@btn-caution-color: white;
+
+@btn-cancel-bg: @btn-default-bg;
+@btn-cancel-color: white;
+
+@btn-icon-top-padding: .1em;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Form controls
+////////////////////////////////////////////////////////////////////////////////
+
+@input-border-width: 1px;
+@input-border-color: @border-color;
+@input-border-color-caution: @btn-caution-bg;
+
+@input-bg: white;
+@input-color: contrast(@input-bg);
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Table styles
+////////////////////////////////////////////////////////////////////////////////
+
+//@table-bg: white;
+
+@table-head-bg: @sidebar-bg-color;
+@table-head-color: contrast(@table-head-bg);
+
+@table-foot-bg: inherit;
+@table-foot-color: inherit;
+
+@table-body-data-odd-bg: #efefef;
+@table-body-data-odd-color: black;
+@table-body-data-even-bg: transparent;
+@table-body-data-even-color: black;
+@table-body-data-hover-bg: @notifier-bg;
+@table-body-data-hover-color: contrast(@notifier-bg);
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Comment styles
+////////////////////////////////////////////////////////////////////////////////
+
+@comment-head-bg: @sidebar-bg-color;
+@comment-head-color: contrast(@comment-head-bg);
+@comment-body-bg: @main-bg;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//: Thematic colors
+////////////////////////////////////////////////////////////////////////////////
+//Additional palette color #9DA85B
+
+/*@user-color: #6B9169;*/
+@user-color: #31514C;
+/*@node-color: #31514C;*/
+@node-color: #6B9169;
+@bunit-color: @sidebar-bg-color;
+@tsm-color: #C8AF53;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App" ng-controller="AppCtrl">
+    <head>
+        <title>DAM</title>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <link rel="stylesheet" href="/compiled/styles.css" />
+        <script src="/compiled/all.js"></script>
+    </head>
+
+    <body dir="ltr" data-ui-view>
+        <h1 data-translate="Hello world">Welcome, visitor</h1>
+        
+        <form>
+            <fieldset>
+                <label class="formcontrol">
+                    <b class="formcontrol-label">What's your name?</b>
+                    <input type="text" class="formcontrol-input" ng-model="yourName" placeholder="Name" />
+                </label>
+            </fieldset>
+            
+            <button type="button" class="btn">
+                <b class="btn-label">Push me, although noting will happen</b>
+            </button>
+        </form>
+        
+        <h2 ng-if="yourName">Hello {{yourName}}</h2>
+        
+        <p data-translate="This is a translation key via a data-translate attribute"></p>
+        <p>{{"This is an inline translation key using the | 'translate filter'" | translate}}</p>
+    </body>
+</html>
