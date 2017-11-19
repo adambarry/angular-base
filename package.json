@@ -1,17 +1,21 @@
 {
-  "name": "AngularBootstrap",
-  "version": "0.0.1",
-  "dependencies": {
-    "grunt-cli": "latest",
-    "grunt-contrib-less": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-concat": "~1.0.1",
-    "restangular": "~1.5.2"
-  },
-  "scripts": {
-    "postinstall": "grunt init"
-  },
-  "devDependencies": {
-    "grunt": "~1.0.1"
-  }
+    "name": "angularbootstrap",
+    "description": "Angular Bootstrap application framework",
+    "author": "Adam Barry",
+    "version": "0.0.1",
+    "dependencies": {
+        "grunt-cli": "latest",
+        "grunt-contrib-less": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-concat": "~1.0.1"
+    },
+    "scripts": {
+        "postinstall": "grunt init",
+        "lite": "lite-server --port 10001",
+        "start": "npm run lite"
+    },
+    "devDependencies": {
+        "grunt": "~1.0.1",
+        "lite-server": "^1.3.1"
+    }
 }
