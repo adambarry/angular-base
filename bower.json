@@ -1,31 +1,31 @@
 {
-  "name": "angular-bootstrap",
-  "authors": [
-    "admbarry <admbarry@gmail.com>"
-  ],
-  "description": "",
-  "main": "",
-  "keywords": [
-    "DAM"
-  ],
-  "license": "MIT",
-  "homepage": "",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular": "^1.5.5",
-    "angular-ui-router": "^0.2.18",
-    "modernizr": "https://github.com/components/modernizr.git#^2.8.3",
-    "normalize-css": "https://github.com/necolas/normalize.css.git#^4.1.1",
-    "angular-translate-interpolation-messageformat": "^2.11.0",
-    "angular-translate": "^2.11.0",
-    "angular-http-batcher": "^1.12.0",
-    "restangular": "^1.5.2"
-  }
+    "name": "angular-bootstrap",
+    "authors": [
+        "admbarry <admbarry@gmail.com>"
+    ],
+    "description": "",
+    "main": "",
+    "keywords": [
+        "angular"
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "^1.5.5",
+        "angular-ui-router": "^0.2.18",
+        "modernizr": "https://github.com/components/modernizr.git#^2.8.3",
+        "normalize-css": "https://github.com/necolas/normalize.css.git#^4.1.1",
+        "angular-translate-interpolation-messageformat": "^2.11.0",
+        "angular-translate": "^2.11.0",
+        "angular-http-batcher": "^1.12.0",
+        "restangular": "^1.5.2"
+    }
 }

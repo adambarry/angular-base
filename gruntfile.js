@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     'bower_components/modernizr/modernizr.js',
 
                     //Plugins
-                    'js/plugins/**/*.js',
+                    'scripts/plugins/**/*.js',
 
                     //App specific JavaScripts
                     'ng/**/*.js'
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['js/plugins/**/*.js', 'ng/**/*.js'],
+                files: ['scripts/plugins/**/*.js', 'ng/**/*.js'],
                 tasks: ['concat'],
                 options: {
                     atBegin: true

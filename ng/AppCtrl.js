@@ -1,10 +1,11 @@
-(function () {
+(function() {
     "use strict";
-    
+
     var appId = "App",
         controllerId = "AppCtrl";
-    
-    angular.module(appId).controller(controllerId, ["$scope", function ($scope) {
+
+    angular.module(appId).controller(controllerId, ["$scope", function($scope) {
+
         console.info(controllerId + " $scope", $scope);
 
         /******************************************************************************
@@ -15,6 +16,10 @@
         /******************************************************************************
          * Scope functions
          *****************************************************************************/
+
+        $scope.click = function() {
+            alert("button clicked");
+        };
 
     }]);
 }());
