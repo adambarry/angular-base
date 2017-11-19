@@ -1,10 +1,10 @@
-(function () {
+(function() {
     "use strict";
 
     var appId = "App";
-    
+
     angular.module(appId).config(["$provide", "$compileProvider", "$httpProvider", "$translateProvider", "RestangularProvider", "httpBatchConfigProvider",
-        function ($provide, $compileProvider, $httpProvider, $translateProvider, RestangularProvider, httpBatchConfigProvider) {
+        function($provide, $compileProvider, $httpProvider, $translateProvider, RestangularProvider, httpBatchConfigProvider) {
 
             // console.group(appId + "config");
             // console.info(appId + "config");
@@ -15,7 +15,7 @@
             // console.info("RestangularProvider", RestangularProvider);
             // console.info("httpBatchConfigProvider", httpBatchConfigProvider);
             // console.groupEnd();
-            
+
             var globalConfig = {
                 apiRoot: "/api/",
                 authEndpoint: "OAuth"
@@ -54,7 +54,7 @@
                     ignoredVerbs: ["post", "put", "patch", "delete"],
                     sendCookies: false,
                     enabled: !globalConfig.debugMode,
-                    canBatchRequest: function (url, method) {
+                    canBatchRequest: function(url, method) {
                         /**
                          * 1:   This function returns true if it the requested url can be batched.
                          *      The request will explode on attempts to batch OAuth requests or other batch requests.
@@ -78,14 +78,14 @@
              * the items actually are, so add a response intereceptor
              */
             RestangularProvider
-                .addResponseInterceptor(function (data, operation, what, url, response, deferred) {
+                .addResponseInterceptor(function(data, operation, what, url, response, deferred) {
                     var extractedData;
                     // .. to look for getList operations
                     if (operation === "getList") {
                         // .. and extract the list data
                         extractedData = data.items || [];
                         extractedData.total = data.total;
-                   }
+                    }
 
                     return extractedData || data;
                 });
@@ -93,13 +93,13 @@
             /**
              * Extend restangular collections to make updating list views convenient.
              */
-            RestangularProvider.setOnElemRestangularized(function (elem, isCollection) {
+            RestangularProvider.setOnElemRestangularized(function(elem, isCollection) {
                 if (isCollection) {
-                    /**
+                    /*
                      * updateItem:
                      * Find the item and replace it with the updated version, or add it.
                      */
-                    elem.updateItem = function (obj, compareProp) {
+                    elem.updateItem = function(obj, compareProp) {
                         if (!compareProp) {
                             compareProp = "id";
                         }
@@ -111,14 +111,20 @@
                             }
                         }
 
+                        //Add the item if no match was found
                         elem.push(obj);
+
+                        //Update the total count for the collection
+                        if (elem.total) {
+                            elem.total = elem.total + 1;
+                        }
                     };
 
-                    /**
+                    /*
                      * removeItem:
                      * Find the item with the specified id and remove it.
                      */
-                    elem.removeItem = function (id) {
+                    elem.removeItem = function(id) {
                         if (angular.isObject(id) && id.hasOwnProperty("id")) {
                             //An object was passed, use it's ID instead
                             id = id.id;
@@ -127,17 +133,50 @@
                         for (var i = 0; i < elem.length; i++) {
                             if (id == elem[i].id) {
                                 elem.splice(i, 1);
+
+                                //Update the total count for the collection
+                                if (elem.total) {
+                                    elem.total = elem.total - 1;
+                                }
+
                                 return;
                             }
                         }
                     };
                 } else if (angular.isObject(elem)) {
-                    elem.updateItem = function (updated) {
+                    elem.updateItem = function(updated) {
                         for (var i in updated) {
+
+                            //Update properties which exist in both collections, leave others intact
                             if (this.hasOwnProperty(i) && updated.hasOwnProperty(i)) {
+                                //console.log(i, updated[i]);
                                 this[i] = updated[i];
                             }
                         }
+                    }
+
+                    elem.replaceItem = function(updated) {
+                        //console.group("refreshItem");
+                        for (var i in updated) {
+                            if (!this.hasOwnProperty(i) && updated.hasOwnProperty(i)) {
+                                //If the element doesn't have the property from updated, add it
+                                //console.warn("add", i);
+                                this[i] = updated[i]
+                            } else if (this.hasOwnProperty(i) && updated.hasOwnProperty(i)) {
+                                //If the element already has the property from updated, update it
+                                //console.log("update", i);
+                                this[i] = updated[i];
+                            }
+                        }
+
+                        //Remove properties which are not part of the updated object
+                        for (var i in elem) {
+                            if (this.hasOwnProperty(i) && !updated.hasOwnProperty(i)) {
+                                //console.warn("delete", i);
+                                delete this[i];
+                            }
+                        }
+                        //console.groupEnd();
                     }
                 }
                 return elem;
@@ -162,19 +201,22 @@
              * requests, it transforms the body to remove $-prefixed properties. However the
              * JSON.Net uses the $type property to distinguish polymorphism.
              */
-            $httpProvider.defaults.transformRequest = function (data) {
+            $httpProvider.defaults.transformRequest = function(data) {
                 function isWindow(obj) {
                     return obj && obj.document && obj.location && obj.alert && obj.setInterval;
                 }
+
                 function isScope(obj) {
                     return obj && obj.$evalAsync && obj.$watch;
                 }
+
                 function isFile(obj) {
                     var toString = (obj).toString;
                     return toString.call(obj) === '[object File]';
                 }
+
                 function toJsonWithJsonDotNetSupport(obj, pretty) {
-                    return JSON.stringify(obj, function (key, value) {
+                    return JSON.stringify(obj, function(key, value) {
                         var val = value;
                         if (/^\$+/.test(key) && key !== "$type") {
                             val = undefined;
@@ -197,5 +239,6 @@
 
                 return angular.isObject(data) && !isFile(data) ? toJsonWithJsonDotNetSupport(data, false) : data;
             };
-        }]);
+        }
+    ]);
 }());
