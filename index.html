@@ -17,14 +17,14 @@
     <form>
         <fieldset>
             <label class="formcontrol">
-                    <b class="formcontrol-label">What's your name?</b>
-                    <input type="text" class="formcontrol-input" ng-model="yourName" placeholder="Name" />
-                </label>
+                <b class="formcontrol-label">What's your name?</b>
+                <input type="text" class="formcontrol-input" ng-model="yourName" placeholder="Name" />
+            </label>
         </fieldset>
 
         <button type="button" class="btn" ng-click="click();">
-                <b class="btn-label">Push me to run the click function</b>
-            </button>
+            <b class="btn-label">Push me to run the click function</b>
+        </button>
     </form>
 
     <h2 ng-if="yourName">Hello {{yourName}}</h2>
