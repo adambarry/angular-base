@@ -10,10 +10,10 @@
  * Usage:
  *
  * // store a session value/object
- * Session.set(name, object);
+ * Session.set(property_name, object);
  *
  * // retreive a session value/object
- * Session.get(name);
+ * Session.get("property_name");
  *
  * // clear all session data
  * Session.clear();
@@ -22,8 +22,9 @@
  * Session.dump();
  */
 
-if (JSON && JSON.stringify && JSON.parse) {   
-    var Session = Session || (function () {
+if (JSON && JSON.stringify && JSON.parse) {
+
+    var Session = window.Session || (function() {
 
         // window object
         var win = window.top || window;
@@ -37,28 +38,38 @@ if (JSON && JSON.stringify && JSON.parse) {
         };
 
         // page unload event
-        if (window.addEventListener) window.addEventListener("unload", Save, false);
-        else if (window.attachEvent) window.attachEvent("onunload", Save);
-        else window.onunload = Save;
+        if (window.addEventListener) {
+            window.addEventListener("unload", Save, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onunload", Save);
+        } else {
+            window.onunload = Save;
+        }
 
         // public methods
         return {
 
             // set a session variable
-            set: function (name, value) {
+            set: function(name, value) {
                 store[name] = value;
+
+                return Session.dump();
             },
 
             // get a session value
-            get: function (name) {
+            get: function(name) {
                 return (store[name] ? store[name] : undefined);
             },
 
             // clear session
-            clear: function () { store = {}; },
+            clear: function() {
+                store = {};
+
+                return Session.dump();
+            },
 
             // dump session data
-            dump: function () { return JSON.stringify(store); }
+            dump: function() { return JSON.parse(JSON.stringify(store)); }
 
         };
     }());

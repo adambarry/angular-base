@@ -1,8 +1,3 @@
-
-/*global window,
-  document
-*/
-
 /*
  * Script which automatically hides console activity (log, warn etc.),
  * but you can enable them if you want by:
@@ -17,8 +12,8 @@
  * You can also enable Firebug Lite if your browser has unsatisfying logging support.
  */
 
-(function () {
-    'use strict';
+(function() {
+    "use strict";
 
     var App = window.App || {},
         Session = window.Session || {},
@@ -26,21 +21,33 @@
         firebugLiteSrc,
         methods,
         script,
-        isUseLogging,
+        useLogging,
         i,
         original,
         handler;
 
-    firebugLiteOptions = 'enableTrace,overrideConsole,startOpened';
-    firebugLiteSrc = 'https://getfirebug.com/firebug-lite.js';
+    firebugLiteOptions = "enableTrace,overrideConsole,startOpened";
+    firebugLiteSrc = "https://getfirebug.com/firebug-lite.js";
     methods = ["assert", "clear", "count", "debug", "dir", "dirxml", "exception", "group", "groupCollapsed", "groupEnd", "info", "log", "error", "profile", "profileEnd", "table", "time", "timeEnd", "trace", "warn"];
 
-    //Determine when not to hide console entries
-    isUseLogging = (window.location.hostname.indexOf('localhost') !== -1
-        || window.location.hostname.indexOf('.site') !== -1
-        || window.location.hostname.indexOf('.local') !== -1
-        || Session && Session.get("debug")
-    );
+    //Determine when to allow the console
+    //console.group("console");
+
+    // console.log("conditions", {
+    //     Session: Session && Session.get("debug"),
+    //     localhost: window.location.hostname.indexOf("localhost") !== -1
+    // });
+
+    useLogging = (Session && Session.get("debug") ||
+        window.location.hostname.indexOf("localhost") !== -1);
+
+    //console.log("useLogging", useLogging);
+    //console.groupEnd();
+
+    if (useLogging) {
+        //If the console is supposed to be available, don't disable it
+        return;
+    }
 
     // Map over localy
     original = App.console = window.console;
@@ -49,19 +56,19 @@
     window.console = {};
 
     // Implement Firebug Lite
-    if (window.location.search.indexOf('firebuglite=true') !== -1) {
-        script = document.createElement('script');
-        script.src = firebugLiteSrc + '#' + firebugLiteOptions;
-        document.getElementsByTagName('head')[0].appendChild(script);
+    if (window.location.search.indexOf("firebuglite=true") !== -1) {
+        script = document.createElement("script");
+        script.src = firebugLiteSrc + "#" + firebugLiteOptions;
+        document.getElementsByTagName("head")[0].appendChild(script);
     }
 
     // Implement methods to window.console
     // http://getfirebug.com/wiki/index.php/Console_API
-    handler = function (method) {
-        window.console[method] = function () {
+    handler = function(method) {
+        window.console[method] = function() {
             var args;
 
-            if (!isUseLogging) { return; }
+            if (!useLogging) { return; }
 
             args = Array.prototype.slice.call(arguments);
 
@@ -70,7 +77,7 @@
                 original[method].apply(original, args);
             } else if (original && original.log) {
                 // If a console.log method exist, but the current method is not supported/a custom method.
-                args.unshift('[' + method + ']');
+                args.unshift("[" + method + "]");
                 // Use the log instead with a prefix of the method name in brackets
                 if (original.log.apply) {
                     original.log.apply(original, args);
