@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat: {
             options: {
-                separator: ';',
+                separator: ';\r\n', //append a ";" + return + newline after each source script
             },
             dist: {
                 src: [
@@ -47,8 +47,9 @@ module.exports = function(grunt) {
                     //Various frameworks
                     'bower_components/modernizr/modernizr.js',
 
-                    //Plugins
-                    'scripts/plugins/**/*.js',
+                    //Plugins (in specifc order)
+                    'scripts/plugins/session.js',
+                    'scripts/plugins/console.js',
 
                     //App specific JavaScripts
                     'ng/**/*.js'
@@ -97,15 +98,15 @@ module.exports = function(grunt) {
             }
         }
     });
-    
+
     // grunt.event.on('watch', function (action, filepath, target) {
     //     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
     // });
 
 
-////////////////////////////////////////////////////////////////////////////////
-//: Register tasks
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //: Register tasks
+    ////////////////////////////////////////////////////////////////////////////////
 
     // Init
     // Execute an initial compilation of the JavaScript and LESS/CSS files and
@@ -128,9 +129,9 @@ module.exports = function(grunt) {
     ]);
 
 
-////////////////////////////////////////////////////////////////////////////////
-//: Load dependencies
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////
+    //: Load dependencies
+    ////////////////////////////////////////////////////////////////////////////////
 
     //grunt.loadNpmTasks('grunt-manifest-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
