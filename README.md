@@ -13,6 +13,29 @@ In addition, Angular base provides the following extensions to AngularJS:
 - Restangular (https://github.com/mgonto/restangular), which "simplifies common GET, POST, DELETE, and UPDATE requests with a minimum of client code. It's a perfect fit for any WebApp that consumes data from a RESTful API."
 
 
+## Structure
+The project advocates the following file/folder-structure which works beautifully with Angular's nested scopes (note that filenames differ from (and contains less files than) the repository for explanatory purposes):
+
+1) Folder: `ng` - the main folder for all Angular related files.
+    1) Folder: `_controllers`
+    1) Folder: `_directives`
+    1) Folder: `_views`
+    1) Folder: `ChildTheme`
+        1) Folder: `_controllers`
+        1) Folder: `_directives`
+        1) Folder: `_views`
+        1) Folder: `GrandChildTheme`
+            1) Folder: `_controllers`
+            1) Folder: `_directives`
+            1) Folder: `_views`
+            1) `GrandChildStates.js`
+            1) `GrandChildThemeCtrl.js`
+        1) `ChildStates.js`
+        1) `ChildThemeCtrl.js`
+    1) `MainStates.js`
+    1) `MainCtrl.Js`
+
+
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
 
