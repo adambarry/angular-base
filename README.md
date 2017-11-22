@@ -1,5 +1,5 @@
 # Angular base
-The purpose of the Angular base is to make it (very) quick and easy for you to start developing you AngularJS (1.x) application, without having to worry about getting all of the basic components to work together, e.g.:
+The purpose of the Angular base is to make it (very) quick and easy for you to start developing your AngularJS (1.x) application, without having to worry about getting all of the basic components to work together, e.g.:
 
 - Preprocessing **LESS** files.
 - Concatenating **JavaScript** files.
