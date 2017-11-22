@@ -54,7 +54,10 @@ module.exports = function(grunt) {
                     'scripts/plugins/console.js',
 
                     //App specific JavaScripts
-                    'ng/**/*.js'
+                    'ng/**/*.js',
+
+                    //Angular HTML templates
+                    '<%= ngtemplates.app.dest %>'
                 ],
                 dest: 'compiled/all.js',
             },
@@ -71,6 +74,7 @@ module.exports = function(grunt) {
                 files: ['scripts/plugins/**/*.js', 'ng/**/*.js'],
                 tasks: ['concat'],
                 options: {
+                    atBegin: true,
                     atBegin: true
                 }
             },
@@ -81,14 +85,18 @@ module.exports = function(grunt) {
                 ],
                 tasks: ['less:style'],
                 options: {
+                    atBegin: true,
                     livereload: true
                 }
             },
             html: {
                 files: [
-                    '**/*.html'
+                    '*.html',
+                    'ng/**/*.html'
                 ],
+                tasks: ['ngtemplates'],
                 options: {
+                    atBegin: true,
                     livereload: true
                 }
             },
@@ -98,10 +106,31 @@ module.exports = function(grunt) {
                     '**/*.html'
                 ]
             }
+        },
+        ngtemplates: {
+            app: {
+                //cwd: 'www',
+                src: 'ng/**/*.html',
+                dest: 'compiled/templates.js',
+                options: {
+                    module: 'App',
+                    prefix: '/',
+                    // htmlmin: {
+                    //     collapseBooleanAttributes:      true,
+                    //     collapseWhitespace:             true,
+                    //     removeAttributeQuotes:          true,
+                    //     removeComments:                 true, // Only if you don't use comment directives! 
+                    //     removeEmptyAttributes:          true,
+                    //     removeRedundantAttributes:      true,
+                    //     removeScriptTypeAttributes:     true,
+                    //     removeStyleLinkTypeAttributes:  true
+                    // }
+                }
+            }
         }
     });
 
-    // grunt.event.on('watch', function (action, filepath, target) {
+    // grunt.event.on('watch', function(action, filepath, target) {
     //     grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
     // });
 
@@ -111,14 +140,13 @@ module.exports = function(grunt) {
     ////////////////////////////////////////////////////////////////////////////////
 
     // Init
-    // Execute an initial compilation of the JavaScript and LESS/CSS files and
-    // start a Grunt watch task.
+    // Execute an initial compilation of the JavaScript and LESS/CSS files
     //
     // Used when executing an "npm install" e.g. from the terminal
 
     grunt.registerTask('init', [
-        'less',
-        'watch'
+        'less:style',
+        'concat'
     ]);
 
 
@@ -139,4 +167,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-angular-templates');
 };
