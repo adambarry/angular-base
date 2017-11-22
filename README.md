@@ -18,10 +18,9 @@ Once you've cloned or downloaded the code repository to your local machine, `cd`
 ## Development
 When you're ready to start developing, (depending on your needs) you can start the following processes (in separate terminal windows):
 
-- `grunt watch` which will concatenate the JavaScript files; compile the LESS files into CSS which the browser can interpret.
+- `grunt watch` which will:
+    - concatenate the JavaScript files.
+    - compile the LESS files into CSS which the browser can interpret.
+    - concatenates all of the Angular templates into the `compiled/templates.js` file using Angular's `$templateCache` functionality, which means that the templates can be referenced via the `templateUrl` property as you normally would an HTML-file, e.g. `templateUrl: "/ng/_directives/navigation/navigation.html"`, but instead of this requiring an additional XHR, the template will be served directly from the template cache.
 
 - `npm start` which launches the built-in web-server (source: https://weblogs.asp.net/lduveau/visual-studio-code-and-local-web-server).
-
-
-#### Angular HTML Templates
-A Grunt task automatically concatenates all of the Angular templates into the `compiled/templates.js` file using Angular's `$templateCache` functionality, which means that the templates can be referenced via the `templateUrl` property as you normally would an HTML-file, e.g. `templateUrl: "/ng/_directives/navigation/navigation.html"`, but instead of this requiring an additional XHR, the template will be served directly from the template cache.
