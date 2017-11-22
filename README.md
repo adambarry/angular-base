@@ -3,7 +3,7 @@ The purpose of the Angular base is to make it (very) quick and easy for you to s
 
 - Preprocessing **LESS** files.
 - Concatenating **JavaScript** files.
-- Adding Angular HTML templates to Angular's **templateCache** (JavaScript) so you don't have to worry about your uses being presented with obsolete versions.
+- Adding Angular HTML templates to Angular's **templateCache** (JavaScript) so you don't have to worry about your users being presented with obsolete versions (of user interfaces).
 
 In addition, Angular base provides the following extensions to AngularJS:
 - **Angular UI-Router** ([link](https://github.com/angular-ui/ui-router)), which provides flexible routing in Angular.
@@ -55,7 +55,7 @@ In order for the solution to run you need to have the following software install
 
 
 ## Getting started
-Once you've cloned or downloaded the code repository to your local machine, `cd` into the project folder and run the following commands from a console to get up and running:
+Once you've cloned or downloaded the code repository to your local machine, `cd` into the project folder and run the following commands from a terminal window to get up and running:
 
 1) `npm install` to install the Node.js dependencies for the project.
 1) `bower install` to install the project's frontend dependencies.
