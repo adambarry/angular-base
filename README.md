@@ -23,14 +23,18 @@ The project advocates the following file/folder-structure which works beautifull
     1) `_views`
     1) `ChildTheme`
         1) `_controllers`
+            1) `ChildThemeCtrl.js`
         1) `_directives`
         1) `_services`
         1) `_views`
+            1) `ChildTheme.html`
         1) `GrandChildTheme`
             1) `_controllers`
+                1) `GrandChildThemeCtrl.js`
             1) `_directives`
             1) `_services`
             1) `_views`
+                1) `GrandChildTheme.html`
             1) `GrandChildStates.js`
             1) `GrandChildThemeCtrl.js`
         1) `ChildStates.js`
