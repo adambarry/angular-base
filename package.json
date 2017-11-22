@@ -1,6 +1,6 @@
 {
-    "name": "angularbootstrap",
-    "description": "Angular Bootstrap application framework",
+    "name": "angular-base",
+    "description": "Angular base application framework",
     "author": "Adam Barry",
     "version": "0.0.1",
     "dependencies": {
