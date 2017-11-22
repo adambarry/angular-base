@@ -14,33 +14,35 @@ In addition, Angular base provides the following extensions to AngularJS:
 
 
 ## Structure
-The project advocates the following file/folder-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes) (folders denoted by square brackets, e.g. `[folder_name]`):
+The project advocates the following file/folder-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes):
 
-1) `[ng]` - the main folder for all Angular related files.
-    1) `[_controllers]`
-    1) `[_directives]`
-    1) `[_services]`
-    1) `[_views]`
-    1) `[ChildTheme]`
-        1) `[_controllers]`
-            1) `ChildThemeCtrl.js`
-        1) `[_directives]`
-        1) `[_services]`
-        1) `[_views]`
-            1) `ChildTheme.html`
-        1) `[GrandChildTheme]`
-            1) `[_controllers]`
-                1) `GrandChildThemeCtrl.js`
-            1) `[_directives]`
-            1) `[_services]`
-            1) `[_views]`
-                1) `GrandChildTheme.html`
-            1) `GrandChildStates.js`
-            1) `GrandChildThemeCtrl.js`
-        1) `ChildStates.js`
-        1) `ChildThemeCtrl.js`
-    1) `MainStates.js`
-    1) `MainCtrl.Js`
+.
+├── ng # The main folder for all Angular related files.
+|    ├── _controllers
+|    ├── _directives
+|    ├── _services
+|    ├── _views
+|    ├── ChildTheme
+|    |    ├── _controllers
+|    |    |    ├── ChildThemeCtrl.js
+|    |    ├── _directives
+|    |    ├── _services
+|    |    ├── _views
+|    |    |    ├── ChildTheme.html
+|    |    ├── GrandChildTheme
+|    |    |    ├── _controllers
+|    |    |    |    ├── GrandChildThemeCtrl.js
+|    |    |    ├── _directives
+|    |    |    ├── _services
+|    |    |    ├── _views
+|    |    |    |    ├── GrandChildTheme.html
+|    |    |    ├── GrandChildStates.js
+|    |    |    ├── GrandChildThemeCtrl.js
+|    |    ├── ChildStates.js
+|    |    ├── ChildThemeCtrl.js
+|    ├── MainStates.js
+|    └── MainCtrl.Js
+.
 
 
 ## Prerequisites
