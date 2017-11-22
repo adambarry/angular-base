@@ -3,9 +3,9 @@
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
 
-1) *Node.js* (with Node Package Manager/NPM) from: http://nodejs.org/download/
-1) *Grunt* (JavaScript task runner) installed globally using NPM: `npm install -g grunt-cli`
-1) *Bower* (package manager) installed globally using NPM: `npm install -g bower`
+1) **Node.js** (with Node Package Manager/NPM) from: http://nodejs.org/download/
+1) **Grunt** (JavaScript task runner) installed globally using NPM: `npm install -g grunt-cli`
+1) **Bower** (package manager) installed globally using NPM: `npm install -g bower`
 
 
 ## Getting started
