@@ -38,11 +38,13 @@ module.exports = function(grunt) {
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
                     'bower_components/angular-http-batcher/dist/angular-http-batch.min.js',
-                    'bower_components/restangular/dist/restangular.min.js',
+
                     'bower_components/messageformat/messageformat.js',
                     'bower_components/angular-translate/angular-translate.min.js',
                     'bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js',
+
                     'bower_components/lodash/dist/lodash.min.js',
+                    'bower_components/restangular/dist/restangular.min.js',
 
                     //Various frameworks
                     'bower_components/modernizr/modernizr.js',
