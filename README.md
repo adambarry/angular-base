@@ -1,21 +1,29 @@
-#Angular Bootstrap
+# Angular base
 
-##Prerequisites
+## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
 
-1. Node.js: https://nodejs.org.
+-  Node.js (with Node Package Manager/NPM) from
+    http://nodejs.org/download/
+
+-  Grunt (JavaScript task runner) installed globally using NPM:
+    `sudo npm install -g grunt-cli`
 
 
-##Getting started
-Once you've pulled the code repository from Git, run the following commands from a console to get up and running:
+## Getting started
+Once you've cloned or downloaded the code repository to your local machine, `cd` into the project folder and run the following commands from a console to get up and running:
 
-1. `npm install` to install the Node dependencies for the project.
+- `npm install` to install the Node.js dependencies for the project.
 - `bower install` to install the project's frontend dependencies.
 
 
-##Development
-When you're ready to start developing, you need to start the following processes (in separate terminal windows):
+## Development
+When you're ready to start developing, (depending on your needs) you can start the following processes (in separate terminal windows):
 
-- `grunt watch` which will concatenate the JavaScript files and compile the LESS files into CSS which the browser can interpret. The process is automatically launched upon completion of the inital `npm install` command.
+- `grunt watch` which will concatenate the JavaScript files; compile the LESS files into CSS which the browser can interpret.
 
 - `npm start` which launches the built-in web-server (source: https://weblogs.asp.net/lduveau/visual-studio-code-and-local-web-server).
+
+
+#### Angular HTML Templates
+A Grunt task automatically concatenates all of the Angular templates into the `compiled/templates.js` file using Angular's `$templateCache` functionality, which means that the templates can be referenced via the `templateUrl` property as you normally would an HTML-file, e.g. `templateUrl: "/ng/_directives/navigation/navigation.html"`, but instead of this requiring an additional XHR, the template will be served directly from the template cache.
