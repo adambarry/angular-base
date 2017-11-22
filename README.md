@@ -14,15 +14,11 @@ In addition, Angular base provides the following extensions to AngularJS:
 
 
 ## Structure
-The project advocates the following file/folder-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes):
+The project advocates the following folder/file-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes):
 
 ```
 .
 ├── ng # The main folder for all Angular related files.
-|    ├── _controllers
-|    ├── _directives
-|    ├── _services
-|    ├── _views
 |    ├── ChildTheme
 |    |    ├── _controllers
 |    |    |    └── ChildThemeCtrl.js
@@ -37,12 +33,12 @@ The project advocates the following file/folder-structure which works beautifull
 |    |    |    ├── _services
 |    |    |    ├── _views
 |    |    |    |    └── GrandChildTheme.html
-|    |    |    ├── GrandChildStates.js
-|    |    |    └── GrandChildThemeCtrl.js
-|    |    ├── ChildStates.js
-|    |    └── ChildThemeCtrl.js
-|    ├── MainStates.js
-└──  └── MainCtrl.Js
+|    |    |    └── GrandChildStates.js
+|    |    └── ChildStates.js
+|    ├── App.js
+|    ├── AppCfg.js
+|    ├── AppCtrl.js
+└──  └── AppStates.Js
 .
 ```
 
