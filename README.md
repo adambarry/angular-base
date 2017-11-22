@@ -25,22 +25,22 @@ The project advocates the following file/folder-structure which works beautifull
 |    ├── _views
 |    ├── ChildTheme
 |    |    ├── _controllers
-|    |    |    ├── ChildThemeCtrl.js
+|    |    |    └── ChildThemeCtrl.js
 |    |    ├── _directives
 |    |    ├── _services
 |    |    ├── _views
-|    |    |    ├── ChildTheme.html
+|    |    |    └── ChildTheme.html
 |    |    ├── GrandChildTheme
 |    |    |    ├── _controllers
-|    |    |    |    ├── GrandChildThemeCtrl.js
+|    |    |    |    └── GrandChildThemeCtrl.js
 |    |    |    ├── _directives
 |    |    |    ├── _services
 |    |    |    ├── _views
-|    |    |    |    ├── GrandChildTheme.html
+|    |    |    |    └── GrandChildTheme.html
 |    |    |    ├── GrandChildStates.js
-|    |    |    ├── GrandChildThemeCtrl.js
+|    |    |    └── GrandChildThemeCtrl.js
 |    |    ├── ChildStates.js
-|    |    ├── ChildThemeCtrl.js
+|    |    └── ChildThemeCtrl.js
 |    ├── MainStates.js
 |    └── MainCtrl.Js
 .
