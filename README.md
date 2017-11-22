@@ -16,6 +16,7 @@ In addition, Angular base provides the following extensions to AngularJS:
 ## Structure
 The project advocates the following file/folder-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes):
 
+```
 .
 ├── ng # The main folder for all Angular related files.
 |    ├── _controllers
@@ -43,7 +44,7 @@ The project advocates the following file/folder-structure which works beautifull
 |    ├── MainStates.js
 |    └── MainCtrl.Js
 .
-
+```
 
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
