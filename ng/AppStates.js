@@ -37,7 +37,7 @@
 
                 .state(statePrefix + ".dashboard", {
                     url: defaultState, //url will become: #/dashboard
-                    templateUrl: "/ng/_views/dashboard.html",
+                    templateUrl: "/ng/Dashboard/_views/Dashboard.html",
                     controller: "DashboardCtrl",
                     resolve: {
                         pageTitle: ["$translate", function($translate) {
