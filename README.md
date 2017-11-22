@@ -1,4 +1,17 @@
 # Angular base
+The purpose of the Angular base is to make it (very) quick and easy for you to start developing you AngularJS application, without having to worry about getting all of the basic components to work together, e.g.:
+
+- Preprocessing **LESS** files.
+- Concatenating **JavaScript** files.
+- Adding Angular HTML templates to Angular's **templateCache** (JavaScript) so you don't have to worry about your uses being presented with obsolete versions.
+
+In addition, Angular base provides the following extensions to AngularJS (1):
+- Angular UI-Router (https://github.com/angular-ui/ui-router), which provides flexible routing in Angular.
+- Angular translate (https://github.com/angular-translate/angular-translate), which makes it easy to make your application support multiple languages.
+    - with pluralization (https://angular-translate.github.io/docs/#/guide/14_pluralization), which enables your translation keys to adapt to their context, e.g. "nothing", "one thing", "two things", "many things".
+- Angular HTTP batcher (https://github.com/jonsamwell/angular-http-batcher), which enables multiple API-calls to be batched together to reduce network traffic.
+- Restangular (https://github.com/mgonto/restangular), which "simplifies common GET, POST, DELETE, and UPDATE requests with a minimum of client code. It's a perfect fit for any WebApp that consumes data from a RESTful API."
+
 
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
