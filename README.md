@@ -42,7 +42,7 @@ The project advocates the following file/folder-structure which works beautifull
 |    |    ├── ChildStates.js
 |    |    └── ChildThemeCtrl.js
 |    ├── MainStates.js
-|    └── MainCtrl.Js
+└──  └── MainCtrl.Js
 .
 ```
 
