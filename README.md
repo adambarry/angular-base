@@ -6,11 +6,11 @@ The purpose of the Angular base is to make it (very) quick and easy for you to s
 - Adding Angular HTML templates to Angular's **templateCache** (JavaScript) so you don't have to worry about your uses being presented with obsolete versions.
 
 In addition, Angular base provides the following extensions to AngularJS:
-- **Angular UI-Router** (https://github.com/angular-ui/ui-router), which provides flexible routing in Angular.
-- **Angular translate** (https://github.com/angular-translate/angular-translate), which makes it easy to make your application support multiple languages.
-    - **Pluralization for Angular translate** (https://angular-translate.github.io/docs/#/guide/14_pluralization), which enables your translation keys to adapt to their context, e.g. "nothing", "one thing", "two things", "many things".
-- **Angular HTTP batcher** (https://github.com/jonsamwell/angular-http-batcher), which enables multiple API-calls to be batched together to reduce network traffic.
-- **Restangular** (https://github.com/mgonto/restangular), which simplifies common `POST`, `GET`, `PATCH`, `UPDATE` and `DELETE` requests when working with RESTful APIs (refer to [this blog post](https://adambarry.wordpress.com/2016/04/18/thoughts-on-flexible-restful-apis/)).
+- **Angular UI-Router** ([link](https://github.com/angular-ui/ui-router), which provides flexible routing in Angular.
+- **Angular translate** ([link](https://github.com/angular-translate/angular-translate), which makes it easy to make your application support multiple languages.
+    - **Pluralization for Angular translate** ([link](https://angular-translate.github.io/docs/#/guide/14_pluralization), which enables your translation keys to adapt to their context, e.g. "nothing", "one thing", "two things", "many things".
+- **Angular HTTP batcher** ([link](https://github.com/jonsamwell/angular-http-batcher), which enables multiple API-calls to be batched together to reduce network traffic.
+- **Restangular** ([link](https://github.com/mgonto/restangular), which simplifies common `POST`, `GET`, `PATCH`, `UPDATE` and `DELETE` requests when working with RESTful APIs (refer to [this blog post](https://adambarry.wordpress.com/2016/04/18/thoughts-on-flexible-restful-apis/)).
 
 
 ## Structure
@@ -46,7 +46,7 @@ The project advocates the following file/folder-structure which works beautifull
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
 
-1) **Node.js** (with Node Package Manager/NPM) from: http://nodejs.org/download/
+1) **Node.js** (with Node Package Manager/NPM) from: http://nodejs.org. When installed the remainder of the prerequisites can be installed using NPM via a terminal window.
 1) **Grunt** (JavaScript task runner) installed globally using NPM: `npm install -g grunt-cli`
 1) **Bower** (package manager) installed globally using NPM: `npm install -g bower`
 
