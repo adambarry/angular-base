@@ -1,11 +1,11 @@
 # Angular base
-The purpose of the Angular base is to make it (very) quick and easy for you to start developing you AngularJS application, without having to worry about getting all of the basic components to work together, e.g.:
+The purpose of the Angular base is to make it (very) quick and easy for you to start developing you AngularJS (1.x) application, without having to worry about getting all of the basic components to work together, e.g.:
 
 - Preprocessing **LESS** files.
 - Concatenating **JavaScript** files.
 - Adding Angular HTML templates to Angular's **templateCache** (JavaScript) so you don't have to worry about your uses being presented with obsolete versions.
 
-In addition, Angular base provides the following extensions to AngularJS (1):
+In addition, Angular base provides the following extensions to AngularJS:
 - Angular UI-Router (https://github.com/angular-ui/ui-router), which provides flexible routing in Angular.
 - Angular translate (https://github.com/angular-translate/angular-translate), which makes it easy to make your application support multiple languages.
     - with pluralization (https://angular-translate.github.io/docs/#/guide/14_pluralization), which enables your translation keys to adapt to their context, e.g. "nothing", "one thing", "two things", "many things".
