@@ -10,7 +10,7 @@ In addition, Angular base provides the following extensions to AngularJS:
 - **Angular translate** (https://github.com/angular-translate/angular-translate), which makes it easy to make your application support multiple languages.
     - **Pluralization for Angular translate** (https://angular-translate.github.io/docs/#/guide/14_pluralization), which enables your translation keys to adapt to their context, e.g. "nothing", "one thing", "two things", "many things".
 - **Angular HTTP batcher** (https://github.com/jonsamwell/angular-http-batcher), which enables multiple API-calls to be batched together to reduce network traffic.
-- **Restangular** (https://github.com/mgonto/restangular), which simplifies common `POST`, `GET`, `PATCH`, `UPDATE` and `DELETE` requests when working with RESTful APIs.
+- **Restangular** (https://github.com/mgonto/restangular), which simplifies common `POST`, `GET`, `PATCH`, `UPDATE` and `DELETE` requests when working with RESTful APIs (refer to [this blog post](https://adambarry.wordpress.com/2016/04/18/thoughts-on-flexible-restful-apis/)).
 
 
 ## Structure
