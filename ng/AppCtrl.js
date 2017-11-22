@@ -6,7 +6,7 @@
 
     angular.module(appId).controller(controllerId, ["$scope", function($scope) {
 
-        console.info(controllerId + " $scope", $scope);
+        //console.info(controllerId + " $scope", $scope);
 
         /******************************************************************************
          * Private functions
@@ -16,10 +16,6 @@
         /******************************************************************************
          * Scope functions
          *****************************************************************************/
-
-        $scope.click = function() {
-            alert("button clicked");
-        };
 
     }]);
 }());

@@ -12,26 +12,15 @@
     <script src="/compiled/templates.js"></script>
 </head>
 
-<body dir="ltr" data-ui-view>
-    <h1 data-translate="Hello world">Welcome, visitor</h1>
+<body dir="ltr">
 
-    <form>
-        <fieldset>
-            <label class="formcontrol">
-                <b class="formcontrol-label">What's your name?</b>
-                <input type="text" class="formcontrol-input" ng-model="yourName" placeholder="Name" />
-            </label>
-        </fieldset>
+    <!-- Main panel -->
+    <div>
 
-        <button type="button" class="btn" ng-click="click();">
-            <b class="btn-label">Push me to run the click function</b>
-        </button>
-    </form>
+        <!-- Template destination -->
+        <ui-view></ui-view>
+    </div>
 
-    <h2 ng-if="yourName">Hello {{yourName}}</h2>
-
-    <p data-translate="This is a translation key via a data-translate attribute"></p>
-    <p>{{"This is an inline translation key using the | 'translate filter'" | translate}}</p>
 </body>
 
 </html>
