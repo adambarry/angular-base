@@ -14,33 +14,61 @@ In addition, Angular base provides the following extensions to AngularJS:
 
 
 ## Structure
-The project advocates the following folder/file-structure which works beautifully with Angular's nested scopes (note that filenames differ from the ones in the repository and that the example contains less files for explanatory purposes):
+The project advocates the following folder/file-structure for each nested scope level:
+
+```
+.
+├── Theme
+|   ├── _controllers
+|   |   └── ThemeCtrl.js
+|   ├── _views
+|   |   └── Theme.html
+|   ├── SubTheme1
+|   |   └── ...
+|   ├── SubTheme2
+|   |   └── ...
+└── └── ThemeStates.js
+.
+```
+
+The reason for the folders directly related to a specifi theme to be prefixed with an `_` (underscore/lodash), e.g. `_directives` is to group them together to make them clearly distinguishable from the potential subtheme-folders which can exist on the samel level in the hierarchy.
+
+Depending on your needs folders like `_directives`, `_interceptors` and `_services` can be added to each theme in the structure.
+
+Below is a more comprehensive example which shows the above folder/file-structure in the context of basic configuration of Angular and components shared across entire application (i.e. not limited to a specific scope) (note that filenames differ from the ones found in the repository, for explanatory purposes):
 
 ```
 .
 ├── ng # The main folder for all Angular related files.
-|    ├── ChildTheme
-|    |    ├── _controllers
-|    |    |    └── ChildThemeCtrl.js
-|    |    ├── _directives
-|    |    ├── _services
-|    |    ├── _views
-|    |    |    └── ChildTheme.html
-|    |    ├── GrandChildTheme
-|    |    |    ├── _controllers
-|    |    |    |    └── GrandChildThemeCtrl.js
-|    |    |    ├── _directives
-|    |    |    ├── _services
-|    |    |    ├── _views
-|    |    |    |    └── GrandChildTheme.html
-|    |    |    └── GrandChildStates.js
-|    |    └── ChildStates.js
-|    ├── App.js
-|    ├── AppCfg.js
-|    ├── AppCtrl.js
-└──  └── AppStates.Js
+|   ├── ChildTheme
+|   |   ├── _controllers
+|   |   |   └── ChildThemeCtrl.js
+|   |   ├── _directives
+|   |   ├── _services
+|   |   |   └── ...
+|   |   ├── _views
+|   |   |   └── ChildTheme.html
+|   |   ├── GrandChildTheme
+|   |   |   ├── _controllers
+|   |   |   |   └── GrandChildThemeCtrl.js
+|   |   |   ├── _views
+|   |   |   |   └── GrandChildTheme.html
+|   |   |   └── GrandChildStates.js
+|   |   └── ChildStates.js
+|   ├── shared
+|   |   ├── _directives
+|   |   |   └── ...
+|   |   ├── _interceptors
+|   |   |   └── ...
+|   |   └── _services
+|   |   |   └── ...
+|   ├── App.js
+|   ├── AppCfg.js
+|   ├── AppCtrl.js
+└── └── AppStates.Js
 .
 ```
+
 
 ## Prerequisites
 In order for the solution to run you need to have the following software installed on your computer:
