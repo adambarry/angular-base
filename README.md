@@ -44,6 +44,7 @@ Below is a more comprehensive example which shows the above folder/file-structur
 |   |   ├── _controllers
 |   |   |   └── ChildThemeCtrl.js
 |   |   ├── _directives
+|   |   |   └── ...
 |   |   ├── _services
 |   |   |   └── ...
 |   |   ├── _views
