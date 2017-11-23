@@ -28,7 +28,6 @@ The project advocates the following folder/file-structure for each nested scope 
 |   ├── SubTheme2
 |   |   └── ...
 └── └── ThemeStates.js
-.
 ```
 
 The reason for the folders directly related to a specifi theme to be prefixed with an `_` (underscore/lodash), e.g. `_directives` is to group them together to make them clearly distinguishable from the potential subtheme-folders which can exist on the samel level in the hierarchy.
