@@ -60,5 +60,56 @@
                         $urlRouterProvider.otherwise(baseState + defaultState);
                 }
             }
-        ]);
+        ])
+        .run(["$rootScope", "$state", "HttpHandler", function($rootScope, $state, HttpHandler) {
+
+            HttpHandler.R.setFullRequestInterceptor(function(element, operation, route, url, headers, params, httpConfig) {
+                httpConfig = httpConfig || {};
+
+                /*
+                 * Selectively apply timeouts to XHRs to ensure that the functionality is intentional.
+                 * Example:
+                 
+                    RestangularObject.all("resourceName")
+                    .withHttpConfig({ allowCancel: true })  //This is the intentional part!
+                    .getList({
+                        limit: 0
+                    })["catch"]()
+                 * 
+                 */
+
+                if (httpConfig.allowCancel) {
+                    if (httpConfig.timeout === undefined) {
+                        httpConfig.timeout = HttpHandler.newTimeout();
+                    }
+                }
+
+                return {
+                    element: element,
+                    params: params,
+                    headers: headers,
+                    httpConfig: httpConfig
+                };
+            });
+
+            var stateChangeSuccessOn = $rootScope.$on("$stateChangeSuccess", function(event, toState, stateParams) {
+                HttpHandler.abortAllRequestsOn("$stateChangeSuccess");
+            });
+
+
+            /******************************************************************************
+             * Clean up
+             ******************************************************************************/
+
+            var destroyWatch = $rootScope.$on("$destroy", function() {
+                //console.debug(id, "$scope.$destroy()");
+                //console.log("You left the scope - the callback should be removed!");
+
+                stateChangeStartOn();
+                stateChangeSuccessOn();
+
+                //Unbind the destroy watcher itself
+                destroyWatch();
+            });
+        }]);
 }());
