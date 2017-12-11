@@ -65,8 +65,7 @@ Below is a more comprehensive example which shows the above folder/file-structur
 |   ├── App.js
 |   ├── AppCfg.js
 |   ├── AppCtrl.js
-|   └── AppStates.Js
-.
+└── └── AppStates.Js
 ```
 
 
